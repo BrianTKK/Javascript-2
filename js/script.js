@@ -1,28 +1,21 @@
-// função simples
-function soma(){
-    let numeroUm = 20;
-    let numeroDois = 30;
-    console.log(numeroUm + numeroDois);
-    
-}
-soma();
-console.log("-----------------");
+const simularValorPassagem = function (qtdAdultos, qtdCriancas, idaVolta) {
+    const PRECO_PASSAGEM = 1000;
 
-// parametros
-function multiplica(v1 = 0, v2 = 0) {
-    let resultado = v1 * v2;
-    console.log(resultado);
-}
-multiplica()
-multiplica(10, 20);
-multiplica(5, 6);
-console.log("-----------------");
+    // calculo adulto 
+    const valorAdulto = PRECO_PASSAGEM * qtdAdultos;
 
-// função com retorno 
-function subtrair(v1 = 0, v2 = 0) {
-    return v1 - v2;
-}
-const resultadoFuncao = subtrair(10, 3);
-console.log(resultadoFuncao);
-console.log("-----------------");
+    // calculo criança
+    const valorCrianca = (PRECO_PASSAGEM * qtdCriancas) * 0.5;
 
+    if (idaVolta) {
+        return (valorAdulto + valorCrianca) * 2;
+    } else {
+        return valorAdulto + valorCrianca;
+    }
+}
+
+let valorPassagem = simularValorPassagem(2, 3, false);
+console.log(`O valor da passagem é: R$ ${valorPassagem.toFixed(2)}`);
+
+valorPassagem = simularValorPassagem(3, 0, true);
+console.log(`O valor da passagem é: R$ ${valorPassagem.toFixed(2)}`);
