@@ -1,19 +1,24 @@
-(function () {
-	let carrinho = '';
+// Construtor de Array
+const arr = new Array(
+	'Televisão',
+	'Video Game',
+	'Computador',
+	'Celular',
+	'Tablet',
+	124,
+	true
+);
 
-	function adicionarAoCarrinho(item) {
-		carrinho += item + ' ';
-		console.log('Item adicionado ao carrinho: ' + item);
-	}
+console.log(arr);
+console.log(arr[1]);
+console.log(arr[3]);
 
-	function obterCarrinho() {
-		return carrinho;
-	}
+// Array Literal
+const pessoas = ['Eu', 'Você', 'Ele', 'Ela', 'Nós', 'Eles'];
+console.log(pessoas);
 
-	adicionarAoCarrinho('Produto 1');
-	adicionarAoCarrinho('Produto 2');
-	adicionarAoCarrinho('Produto 3');
+// Exibição em tabela
+console.table(pessoas);
 
-	console.log('Itens no carrinho: ' + obterCarrinho());
-	
-})();
+// Exibição da quantidade de elementos no array
+console.log(arr.length);
