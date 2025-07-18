@@ -1,24 +1,44 @@
-// Construtor de Array
-const arr = new Array(
-	'Televisão',
-	'Video Game',
-	'Computador',
-	'Celular',
-	'Tablet',
-	124,
-	true
-);
+const produtos = ['Camiseta', 'Calça', 'Tênis', 'Boné'];
 
-console.log(arr);
-console.log(arr[1]);
-console.log(arr[3]);
+console.log(produtos);
+console.table(produtos);
 
-// Array Literal
-const pessoas = ['Eu', 'Você', 'Ele', 'Ela', 'Nós', 'Eles'];
-console.log(pessoas);
+// Adiciona um produto no inicio da array
+produtos.unshift('Jaqueta');
+console.table(produtos);
+console.log('------------------------------------------------');
 
-// Exibição em tabela
-console.table(pessoas);
+// Adiciona um produto no final da array
+produtos.push('Meias');
+console.table(produtos);
+console.log('------------------------------------------------');
 
-// Exibição da quantidade de elementos no array
-console.log(arr.length);
+// Remove o primeiro produto da array
+produtos.shift();
+console.table(produtos);
+console.log('------------------------------------------------');
+
+// Remove o último produto da array
+produtos.pop();
+console.table(produtos);
+console.log('------------------------------------------------');
+
+// Adiciona um produto na posição 2 da array
+produtos.splice(2, 0, 'Bermuda');
+console.table(produtos);
+console.log('------------------------------------------------');
+
+// encontra a posição do produto
+console.table(produtos);
+console.log(`A posição de Calça é: ${produtos.indexOf('Calça')}`);
+console.log('------------------------------------------------');
+
+// encontra a ultima ocorrência do produto 'Calça'
+produtos.unshift('Calça');
+console.table(produtos);
+console.log(`A posição da útima Calça é: ${produtos.lastIndexOf('Calça')}`);
+console.log('------------------------------------------------');
+
+// Copia somente os produtos a partir do índice 2 para copiaProdutos
+let copiaProdutos = produtos.slice(2);
+console.table(copiaProdutos);
