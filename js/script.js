@@ -1,44 +1,54 @@
 const produtos = ['Camiseta', 'Calça', 'Tênis', 'Boné'];
+console.table(produtos);
+console.log('--------------------------------------');
 
-console.log(produtos);
+const produtos2 = ['Relogio', 'Óculos', 'Pulseira', 'Anel'];
+console.table(produtos2);
+
+// concatenação de arrays
+const novosProdutos = produtos.concat(produtos2);
+console.table(novosProdutos);
+console.log('--------------------------------------');
+
+// Ordena os produtos em ordem alfabética
+produtos.sort();
 console.table(produtos);
 
-// Adiciona um produto no inicio da array
-produtos.unshift('Jaqueta');
+// Ordena os produtos em ordem alfabética inversa
+produtos.reverse();
 console.table(produtos);
-console.log('------------------------------------------------');
 
-// Adiciona um produto no final da array
-produtos.push('Meias');
-console.table(produtos);
-console.log('------------------------------------------------');
+console.log('--------------------------------------');
 
-// Remove o primeiro produto da array
-produtos.shift();
-console.table(produtos);
-console.log('------------------------------------------------');
+// Converter o array em string
+const produtosString = produtos.join(', ');
+console.log(produtosString);
 
-// Remove o último produto da array
-produtos.pop();
-console.table(produtos);
-console.log('------------------------------------------------');
+console.log('--------------------------------------');
 
-// Adiciona um produto na posição 2 da array
-produtos.splice(2, 0, 'Bermuda');
-console.table(produtos);
-console.log('------------------------------------------------');
+// Verifica se um produto existe no array
+// Retorna true ou false
+let existe = produtos.includes('Camiseta');
+console.log(existe);
+console.log('--------------------------------------');
 
-// encontra a posição do produto
-console.table(produtos);
-console.log(`A posição de Calça é: ${produtos.indexOf('Calça')}`);
-console.log('------------------------------------------------');
+//Verifica se todos os produtos possuem a letra "a"
+let produtosComLetraA = produtos.every((produto) => {
+	return produto.includes('a');
+});
+console.log(`Todos os produtos possuem a letra "a"? ${produtosComLetraA}`);
 
-// encontra a ultima ocorrência do produto 'Calça'
-produtos.unshift('Calça');
-console.table(produtos);
-console.log(`A posição da útima Calça é: ${produtos.lastIndexOf('Calça')}`);
-console.log('------------------------------------------------');
+console.log('--------------------------------------');
 
-// Copia somente os produtos a partir do índice 2 para copiaProdutos
-let copiaProdutos = produtos.slice(2);
-console.table(copiaProdutos);
+// Verifica se algum produto possui a letra "a"
+let produtosComLetraA2 = produtos.some((produto) => {
+	return produto.includes('a');
+});
+console.log(`Algum produto possui a letra "a"? ${produtosComLetraA2}`);
+console.log('--------------------------------------');
+
+// Procura o primeiro produto com mais de 6 caracteres
+const MaiorQue6 = produtos.find((produto) => {
+	return produto.length > 6;
+});
+console.log(`Primeiro produto com mais de 6 caracteres: ${MaiorQue6}`);
