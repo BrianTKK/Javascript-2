@@ -1,54 +1,40 @@
-const produtos = ['Camiseta', 'Calça', 'Tênis', 'Boné'];
-console.table(produtos);
-console.log('--------------------------------------');
+const produtos = ['Notebook', 'Tablet', 'Smartphone', 'Desktop', 'Smartwatch'];
+const precos = [2500, 1500, 1200, 3000, 800];
 
-const produtos2 = ['Relogio', 'Óculos', 'Pulseira', 'Anel'];
-console.table(produtos2);
+console.log(produtos);
+console.log(precos);
 
-// concatenação de arrays
-const novosProdutos = produtos.concat(produtos2);
-console.table(novosProdutos);
-console.log('--------------------------------------');
-
-// Ordena os produtos em ordem alfabética
-produtos.sort();
-console.table(produtos);
-
-// Ordena os produtos em ordem alfabética inversa
-produtos.reverse();
-console.table(produtos);
-
-console.log('--------------------------------------');
-
-// Converter o array em string
-const produtosString = produtos.join(', ');
-console.log(produtosString);
-
-console.log('--------------------------------------');
-
-// Verifica se um produto existe no array
-// Retorna true ou false
-let existe = produtos.includes('Camiseta');
-console.log(existe);
-console.log('--------------------------------------');
-
-//Verifica se todos os produtos possuem a letra "a"
-let produtosComLetraA = produtos.every((produto) => {
-	return produto.includes('a');
+// filter
+const produtosComSmart = produtos.filter((produto) => {
+	return produto.includes('Smart');
 });
-console.log(`Todos os produtos possuem a letra "a"? ${produtosComLetraA}`);
+console.log(produtosComSmart);
 
-console.log('--------------------------------------');
-
-// Verifica se algum produto possui a letra "a"
-let produtosComLetraA2 = produtos.some((produto) => {
-	return produto.includes('a');
+// filter buscando por preço maior que 2000
+const precosMaiores = precos.filter((preco) => {
+	return preco > 2000;
 });
-console.log(`Algum produto possui a letra "a"? ${produtosComLetraA2}`);
-console.log('--------------------------------------');
+console.log(precosMaiores);
 
-// Procura o primeiro produto com mais de 6 caracteres
-const MaiorQue6 = produtos.find((produto) => {
-	return produto.length > 6;
+// map - transformando os produtos em maiúsculas retornando em um novo array
+const produtosEmMaiuscula = produtos.map((produto) => {
+	return produto.toUpperCase();
 });
-console.log(`Primeiro produto com mais de 6 caracteres: ${MaiorQue6}`);
+console.log(produtosEmMaiuscula);
+
+// map - dar desconto de 10%
+const precosDesconto = precos.map((preco) => {
+	return preco * 0.9;
+});
+console.log(precosDesconto);
+
+// reduce - retorna um unico valor
+const totalLetrasProdutos = produtos.reduce((acumulador, produto) => {
+	return acumulador + produto.length;}, 0);
+console.log(totalLetrasProdutos);
+
+// reduce - soma todos os preços
+const totalValores = precos.reduce((acumulador, preco) => {
+	return acumulador + preco;
+}, 0);
+console.log(totalValores);
