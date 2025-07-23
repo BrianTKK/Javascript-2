@@ -1,24 +1,23 @@
-const numeros1 = [1, 2, 3];
-console.log(`Array numeros1: ${numeros1}`);
+function calcularSoma(...numeros) {
+	let soma = 0;
+	for (let numero of numeros) {
+		soma += numero;
+	}
+	return soma;
+}
 
-const numeros2 = [4, 5, 6];
-console.log(`Array numeros2: ${numeros2}`);
+console.log(calcularSoma(10, 20, 30));
+console.log(calcularSoma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+console.log('----------------------------');
 
-const todosNumeros = [...numeros1, ...numeros2];
-console.log(`Array todosNumeros: ${todosNumeros}`);
+function calcularMedia(...numeros) {
+	let soma = 0;
+	for (let numero of numeros) {
+		soma += numero;
+	}
+	return soma / numeros.length;
+}
 
-const novoArray = [12, 14, 16, 18, ...todosNumeros, 20, 22, 24];
-console.log(`Array novoArray: ${novoArray}`);
-
-console.log('--------------------------');
-
-
-const carrinho = {
-	Camiseta: 20.99,
-	Calça: 39.99,
-	Tênis: 89.99
-};
-
-const carrinhoCopiado = { ...carrinho };
-console.log(carrinho);
-console.log(carrinhoCopiado);
+console.log(calcularMedia(10, 20, 30));
+console.log(calcularMedia(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+console.log('----------------------------');
