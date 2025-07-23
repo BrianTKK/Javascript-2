@@ -1,23 +1,25 @@
-function calcularSoma(...numeros) {
-	let soma = 0;
-	for (let numero of numeros) {
-		soma += numero;
-	}
-	return soma;
-}
+// Desestruturação de Arrays
 
-console.log(calcularSoma(10, 20, 30));
-console.log(calcularSoma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const [a, b, c, ...restante] = numeros;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(restante);
 console.log('----------------------------');
 
-function calcularMedia(...numeros) {
-	let soma = 0;
-	for (let numero of numeros) {
-		soma += numero;
-	}
-	return soma / numeros.length;
-}
+// Desestruturação de Objetos
+const livro = {
+	titulo: 'JavaScript Essencial',
+	autor: 'John Doe',
+	ano: 2023,
+	editora: 'Tech Books',
+	paginas: 300
+};
 
-console.log(calcularMedia(10, 20, 30));
-console.log(calcularMedia(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-console.log('----------------------------');
+const {titulo, autor, ano, editora, paginas} = livro;
+console.log(titulo);
+console.log(autor);
+console.log(ano);
+console.log(editora);
+console.log(paginas);
